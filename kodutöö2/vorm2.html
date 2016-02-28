@@ -1,4 +1,6 @@
-﻿<!doctype html>
+﻿
+
+<!doctype html>
 <html>
    <head>
       <title>Vorm 2</title>
@@ -7,14 +9,20 @@
    <body>
       <form action="vorm2.html" method="post">
          Sisesta sõiduki registreerimisnumber:<br><br>
-         <input type="text" name="registrinr" placeholder="123ABC">
-         <p>Vali sobiv kindlustusperiood:</p>
+         <input type="text" name="registrinr" placeholder="123ABC"><br><br>
+         Vali sobiv kindlustusperiood:<br><br>
          <select name="kindlustusperiood">
             <option value="3">3 kuud</option>
             <option value="6">6 kuud</option>
             <option value="12" selected>12 kuud</option>
          </select>
+         <br><br>
+         Lisamärkused:<br>
+         <textarea rows="10" cols="50">
+         </textarea>
+         <br><br>
          <input type="submit" name="submit" value="Saada">  
       </form>
    </body>
 </html>
+
