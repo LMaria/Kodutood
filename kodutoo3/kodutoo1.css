@@ -1,0 +1,58 @@
+﻿#pilt {
+    height: 300px;
+    width: 400px;
+    margin: 20px 20px 5px 20px;
+}
+#nimetus {
+    font-weight: bold;
+    text-decoration: underline;
+}
+#liiginimetus {
+    font-style: italic;
+}
+#sonumine {
+    text-align: center;
+}
+h1 {
+    background-color: #B2DFEE;
+}
+h3 {
+    color: blue;
+}
+h4 {
+    color: #B2DFEE;
+}
+body {
+    font-size: 13px;
+    font-family: Arial, Sans-Serif;
+    font-style: normal;
+}
+ul {
+    list-style-type: square;
+}
+ul li {
+    margin: 3px;
+    background: #B2DFEE;
+    width: 130px;
+    text-align: center;
+    color: blue;
+}
+ol {
+    background-color: #B2DFEE;
+    width: 152px;
+}
+ol li {
+    border-right: 2px solid #B2DFEE;
+    border-bottom: 2px solid #B2DFEE;
+    border-left: 2px solid #B2DFEE;
+    width: 150px;
+    background-color: #FFFFFF;
+    padding: 2px;
+}
+ol >:first-child {
+    border-top: 2px solid #B2DFEE;
+    width: 150px;
+}
+.lisainfo {
+    cursor: help;
+}
