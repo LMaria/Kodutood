@@ -14,7 +14,7 @@
     text-align: center;
 }
 h1 {
-    background-color: #B2DFEE;
+    background: #B2DFEE;
 }
 h3 {
     color: blue;
@@ -32,13 +32,13 @@ ul {
 }
 ul li {
     margin: 3px;
-    background-color: #B2DFEE;
+    background: #B2DFEE;
     width: 130px;
     text-align: center;
     color: blue;
 }
 ol {
-    background-color: #B2DFEE;
+    background: #B2DFEE;
     width: 152px;
 }
 ol li {
@@ -46,7 +46,7 @@ ol li {
     border-bottom: 2px solid #B2DFEE;
     border-left: 2px solid #B2DFEE;
     width: 150px;
-    background-color: #FFFFFF;
+    background: #FFFFFF;
     padding: 2px;
 }
 ol >:first-child {

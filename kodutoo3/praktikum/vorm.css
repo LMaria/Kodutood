@@ -1,0 +1,64 @@
+﻿.menyykast {
+  padding: 10px 0px;
+}
+.menyy {
+border: 1px solid blue;
+width: 150px;
+list-style-type: none;
+list-style-position: outside;
+padding: 0px;
+margin: 0px;
+}
+
+.menyy li {
+    width: 7em;
+    padding: 5px
+    float: left;
+    background: #EEEEEE;
+}
+
+.menyy .valitud {
+   background-color: blue;
+  
+}
+
+.menyy a {
+   color: blue;
+   font-family: Arial, Sans-Serif;
+   text-decoration: none;
+}
+
+.menyy a:hover {
+text-decoration: underline;
+}
+.menyy .valitud a{
+    color: white;
+}
+
+.clear {
+clear: both;
+}
+
+.tabel {
+  font-family: Arial, Sans-Serif;
+  border-spacing: 0px;
+  
+}
+
+.tabel caption{
+ font-weight: bold;
+font-size=110%;
+}
+
+.tabel td, .tabel th{
+border-top: 1px solid green;
+padding: 5px;
+}
+
+input [type="text"]{
+border: 2px solid red;
+}
+
+intput[type="password"]
+border: 2px solid green;
+}

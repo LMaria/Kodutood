@@ -1,0 +1,23 @@
+﻿ body {
+  //background-color: blue;
+}
+
+.tekst1, .tekst2 {
+width: 500px; 
+           text-align: justify;
+           font-family: Arial, sans-serif;
+           border: 1px solid green;
+}
+
+.tekst1 .esimene{
+font-weight: bold;
+}
+
+.tekst2 .esimene{
+color: AAAAAA;
+}
+
+h1 {
+       font-family: "Courier New", monospace;
+       border-bottom: 2px solid black;
+}
