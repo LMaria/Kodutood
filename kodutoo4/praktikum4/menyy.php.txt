@@ -1,0 +1,13 @@
+﻿<nav class="navbar navbar-inverse navbar-fixed-top">
+ <div id="navbar" class="collapse navbar-collapse">
+ <ul class="nav navbar-nav">
+        <ul>
+            <li><a href="sisselogimine.php">Sisselogimine</a></li>
+            <li><a href="registreerimine.php">Registreerimine</a></li>
+            <li><a href="ladu.php">Ladu</a></li>
+            <li><a href="http://google.com">Google otsing</a></li>
+            <li><a href="ladu.php">Ladu</a></li>
+        </ul>
+        
+    </div>
+</nav>

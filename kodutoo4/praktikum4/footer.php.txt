@@ -1,0 +1,7 @@
+﻿<div class="autor">
+    &copy; 2016 Nimi
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+﻿body {
+    font-family: Arial, Sans-Serif;
+}
+
+.menyy {
+    margin-bottom: 20px;
+}
+
+@media print, (min-width: 700px){
+  .menyy ul {
+    flex-direction: row;
+}
+}
+
+@media (max-width: 700px){
+.menyy ul {
+    flex-direction: column;
+}
+}
+
+.menyy ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /*flex-wrap: wrap;
+    border: 1px solid red;
+    flex-direction: column;*/
+}
+
+.menyy li {
+    padding: 5px 10px;
+    width: 8em;
+    background-color: #AAAAAA;
+   /*flex-grow: 10;
+    margin: 10px;*/
+}
+
+.menyy a {
+    text-decoration: none;
+    color: blue;
+}
+
+.menyy a:hover {
+    text-decoration: underline;
+}
+
+.menyy li.valitud {
+    background: blue;
+}
+
+.menyy li.valitud a {
+    color: white;
+}
+
+.tabel {
+    border-spacing: 0;
+}
+
+.tabel caption {
+    font-size: 160%;
+}
+
+.tabel td, .tabel th {
+    border-top: 1px solid #AAAAAA;
+    padding: 5px 10px;
+}
+
+input[type="text"], input[type="password"] {
+    font-family: Arial, Sans-Serif;
+    font-size: 15px;
+    padding: 5px 10px;
+    width: 16em;
+    border: 1px dashed #AAAAAA;
+    border-radius: 3px;
+}
+
+div.autor {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    background: white;
+}
