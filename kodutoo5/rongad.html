@@ -1,0 +1,110 @@
+﻿<!doctype html>
+<html>
+
+<head>
+    <title>Harjutus 1</title>
+    <meta charset="utf-8">
+    <script>
+     window.onload = function() {
+     var asukoht = document.getElementById("konteiner");
+     asukoht.onclick = function() {
+     asukoht.style.top = (Math.random()* 600 + 10);
+     asukoht.style.left = (Math.random()* 800 + 10);
+
+  }
+
+}
+     
+    </script>
+    <style type="text/css">
+
+        #pilt {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+      
+        }
+
+        #konteiner {
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            left: 300px;
+            top: 200px;
+            border-radius: 50%;
+            border: 1px solid white;
+        }
+        .rongas {
+            border-radius: 50%;
+            position: absolute;
+        }
+        div:nth-child(1) {
+            height: 100%;
+            width: 100%;
+            background-color: white;
+            border: 1px solid white;
+            top: 0px;
+            left: 0px;
+        }
+        div:nth-child(2) {
+            height: 90%;
+            width: 90%;
+            background-color: red;
+            border: 1px solid red;
+            top: 5px;
+            left: 5px;
+        }
+        div:nth-child(3) {
+            height: 70%;
+            width: 70%;
+            background-color: white;
+            border: 1px solid white;
+            top: 15px;
+            left: 15px;
+        }
+        div:nth-child(4) {
+            height: 50%;
+            width: 50%;
+            background-color: red;
+            border: 1px solid red;
+            top: 25px;
+            left: 25px;
+        }
+        div:nth-child(5) {
+            height: 30%;
+            width: 30%;
+            background-color: white;
+            border: 1px solid white;
+            top: 35px;
+            left: 35px;
+        }
+        div:nth-child(6) {
+            height: 10%;
+            width: 10%;
+            background-color: red;
+            border: 1px solid red;
+            top: 45px;
+            left: 45px;
+        }
+    </style>
+</head>
+
+<body>
+<img id="pilt" src="http://enos.itcollege.ee/~ttanav/VRI/Kodused/04/duck.png" alt="duck"> 
+    <div id="konteiner">
+        <div class="rongas">
+        </div>
+        <div class="rongas">
+        </div>
+        <div class="rongas">
+        </div>
+        <div class="rongas">
+        </div>
+        <div class="rongas">
+        </div>
+        <div class="rongas">
+        </div>
+    </div>
+</body>
+</html>
