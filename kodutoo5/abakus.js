@@ -24,4 +24,3 @@
 
 
 
-// lehe laadimine lõpetatud. Siia funktsiooni sisse kirjutan elementide mõjutamise käsud
