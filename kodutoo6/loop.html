@@ -11,31 +11,25 @@
 
           $(document).ready(function() {
           var count = 0;
+          var $current; 
           $('li').first().addClass('active');
 
           $('#next').click(function(){ 
-
-          if(count == ($('li').length-1)) {
-          $('li').removeClass('active').first().addClass('active');
-          
-          } else {
+         
+          $current = $('li').eq(count);
+          $('li').removeClass('active');
+          $current.next().addClass('active');
           count++;
-          $('li').removeClass('active').eq(count).addClass('active');
-          }
-             
+                       
           });
 
           $('#prev').click(function(){ 
-
-          if(count == 0) {
-          $('li').removeClass('active').last().addClass('active');
-          
-          } else {
- 
+          $current = $('li').eq(count);
+          $('li').removeClass('active');
+          $current.prev().addClass('active');
           count--;
-          $('li').removeClass('active').eq(count).addClass('active');
-          }  
              
+
          });
          
       });
