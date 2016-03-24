@@ -15,13 +15,26 @@
 
           $('#next').click(function(){ 
 
-         if(count == ($('li').length-1)) {
-           alert("otsas on");
+          if(count == ($('li').length-1)) {
+          $('li').removeClass('active').first().addClass('active');
           
-         } else {
-         count++;
+          } else {
+          count++;
           $('li').removeClass('active').eq(count).addClass('active');
           }
+             
+          });
+
+          $('#prev').click(function(){ 
+
+          if(count == 0) {
+          $('li').removeClass('active').last().addClass('active');
+          
+          } else {
+ 
+          count--;
+          $('li').removeClass('active').eq(count).addClass('active');
+          }  
              
          });
          
