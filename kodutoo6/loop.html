@@ -14,11 +14,17 @@
           $('li').first().addClass('active');
 
           $('#next').click(function(){ 
-            count++;
+
+         if(count == ($('li').length-1)) {
+           alert("otsas on");
+          
+         } else {
+         count++;
           $('li').removeClass('active').eq(count).addClass('active');
-                
+          }
+             
          });
-       
+         
       });
       </script>
    </head>
