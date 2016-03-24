@@ -9,14 +9,14 @@
       <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
       <script type="text/javascript">
 
-         $(document).ready(function() {
+          $(document).ready(function() {
           var count = 0;
           $('li').first().addClass('active');
 
           $('#next').click(function(){ 
-            $('li').removeClass('active');
-         alert(count);
-         count++;
+            count++;
+          $('li').removeClass('active').eq(count).addClass('active');
+                
          });
        
       });
