@@ -1,10 +1,16 @@
 ﻿<?php
-$sona = "tagurpidi s6na";
-$uus  = null;
-$temp = null;
-for ($i = strlen($sona); $i >= 0; $i--) {
-    $temp = $sona[$i];
-    $uus .= $temp;
-}
-echo $uus;
-?> 
+
+function reverseString($sona) {
+
+    $uus = null;
+    for ($i = strlen($sona); $i >= 0; $i--) {
+        $temp = $sona[$i];
+        $uus .= $temp;
+    }
+    return $uus;
+ }
+
+$tagurpidi = reverseString("tagurpidi sona");
+echo $tagurpidi;
+
+?>  
