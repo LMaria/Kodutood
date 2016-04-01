@@ -1,0 +1,134 @@
+<?php
+if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+   //var_dump( $_POST );
+   //exit;
+   $andmebaas = file_get_contents('andmebaas.txt');
+   $andmebaas = json_decode($andmebaas, true);//massiiv
+      
+    if ( isset ($_POST['delete'] ) ) {
+    //kustutamine
+    $delete = intval ($_POST['delete']);
+     unset ($andmebaas[$delete]);
+    
+    }else{
+    //lisamine
+   $nimetus = $_POST['nimetus'];
+   $kogus = intval( $_POST['kogus'] );
+    
+   if ( $nimetus == '' || $kogus < 1 ){
+      header('Content-type: text/plain; charset="utf-8"');
+      echo 'Vigased väärtused!';
+      exit;
+   }
+   
+   
+   
+    
+   
+   $andmebaas[] = array(
+       'nimetus' => $nimetus,
+       'kogus' => $kogus
+     );
+   }
+   
+   //$var_dump($andmebaas);
+   
+   $andmebaas = json_encode($andmebaas);
+   file_put_contents('andmebaas.txt', $andmebaas);
+   
+   header('Location: ladu.php'); //tagasi esialgsesse
+   exit;
+}
+	
+?><!doctype HTML>
+<html>
+
+<head>
+    <title>Laoprogramm</title>
+    <meta charset="utf-8">
+
+    <style>
+        #lisa-vorm {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Laoprogramm</h1>
+
+    <p id="kuva-nupp">
+        <button type="button">Kuva lisamise vorm</button>
+    </p>
+
+    <form id="lisa-vorm" method="post" action="ladu.php">
+
+        <p id="peida-nupp">
+            <button type="button">Peida lisamise vorm</button>
+        </p>
+
+        <table>
+            <tr>
+                <td>Nimetus</td>
+                <td>
+                    <input type="text" id="nimetus" name="nimetus">
+                </td>
+            </tr>
+            <tr>
+                <td>Kogus</td>
+                <td>
+                    <input type="number" id="kogus" name="kogus">
+                </td>
+            </tr>
+        </table>
+
+        <p>
+            <button type="submit">Lisa kirje</button>
+        </p>
+
+    </form>
+
+    <table id="ladu" border="1">
+        <thead>
+            <tr>
+                <th>Nimetus</th>
+                <th>Kogus</th>
+                <th>Tegevused</th>
+            </tr>
+        </thead>
+
+        <tbody>
+<?php 
+   $andmebaas = file_get_contents('andmebaas.txt');
+   $andmebaas = json_decode($andmebaas, true);
+   
+  
+   
+?>
+  <?php foreach ( $andmebaas as $index => $rida ): ?>
+      <tr>
+        <td>
+            <?= htmlspecialchars( $rida['nimetus'] ); ?>
+        </td>
+         <td>
+            <?= $rida['kogus']; ?>
+         </td>
+         <td>
+           <form method="post" action="ladu.php">
+              <input type="hidden" name="delete" value="<?= $index; ?>">
+              <button type= "submit">Kustuta rida</button>
+           </form>
+         </td>
+       </tr>
+         
+  <?php endforeach; ?>     
+        
+        </tbody>
+    </table>
+
+    <script src="ladu.js"></script>
+</body>
+
+</html>
