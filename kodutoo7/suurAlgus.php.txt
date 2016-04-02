@@ -36,7 +36,9 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 */
 $arr = explode("\n", $text);
   foreach ($arr as $value) {
-    echo "<p>$value</p>";
+    $firstLetter = substr($value[0], 0);
+	  $firstLetter = str_replace($firstLetter,"<span>$firstLetter</span>",$value);
+	  echo "<p>$firstLetter</p>";
 }
 ?>
 </div>
