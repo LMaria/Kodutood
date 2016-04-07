@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html>
+   <head>
+      <title>Vali stiil</title>
+      <meta charset="utf-8">
+      <style type="text/css">
+      </style>
+   </head>
+   <body>
+      <form action="muuda.php" method="POST">
+         Tekst: <br>
+         <textarea rows="6" cols="50" name="tekst" placeholder="Sisesta tekst siia"></textarea>
+         <br>
+         Teksti värv: <br>
+         <input type="color" name="font_color"><br>
+         Fondi stiil:<br>
+         <select name="font_style">
+            <option value="normal">Tavaline</option>
+            <option value="italic">Italic</option>
+         </select>
+         <br>
+         Fondi suurus:<br>
+         <select name="font_size">
+            <option value="10">10</option>
+            <option value="12">12</option>
+            <option value="14">14</option>
+            <option value="16">16</option>
+         </select>
+         <br>
+         Taustvärv:<br>
+         <input type="color" name="background_color"><br>
+         Piirjoone paksus: <br>
+         <input type="number" name="border_width" min="0" max="7"><br>
+         Piirjoone värv: <br>
+         <input type="color" name="border_color"><br><br>
+         <input type="submit" value="Valmis">
+      </form>
+   </body>
+</html>
