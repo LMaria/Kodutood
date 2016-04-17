@@ -1,21 +1,12 @@
-﻿<?php 
-
-require_once('head.html');
-
-   
-?>
-<div id="wrap">
-	<h3>Valiku tulemus</h3>
-	<p>
-	<?php 
-	   if(!empty($_GET)){
-	   if(!empty($_GET['pilt'])) {
-		   echo "Pilt valitud, tänan";
-	   }else{
-		   echo "Palun vali pilt!";
-	   }
-   }
-     ?>
+﻿<?php require_once('head.html'); ?>
+   <h3>Valiku tulemus</h3>
+   <p>
+      <?php 
+         if(!empty($_GET)){
+            echo nl2br("Lemmik valitud, tänan! \nValisid pildi nr ".$_GET["pilt"]);
+         }else{
+          echo "Vali pilt!";
+         }
+      ?>
    </p>
-</div>
 <?php require_once('foot.html');?>
