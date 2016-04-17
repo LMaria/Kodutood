@@ -1,6 +1,21 @@
-﻿<?php require_once('head.html');?>
+﻿<?php 
+
+require_once('head.html');
+
+   
+?>
 <div id="wrap">
 	<h3>Valiku tulemus</h3>
-	<p>Siia tuleb valiku tulemus, mida saab kuvada ainult PHP abil :)</p>
+	<p>
+	<?php 
+	   if(!empty($_GET)){
+	   if(!empty($_GET['pilt'])) {
+		   echo "Pilt valitud, tänan";
+	   }else{
+		   echo "Palun vali pilt!";
+	   }
+   }
+     ?>
+   </p>
 </div>
 <?php require_once('foot.html');?>
