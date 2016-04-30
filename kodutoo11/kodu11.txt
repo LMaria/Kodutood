@@ -1,0 +1,13 @@
+﻿CREATE TABLE L__loomaaed(
+id int AUTO_INCREMENT PRIMARY KEY,
+nimi varchar( 100 ) NOT NULL,
+vanus int,
+liik varchar (100),
+puur int
+);
+
+
+INSERT INTO `L__loomaaed` ( `id` , `nimi` , `vanus` , `liik` , `puur` )
+VALUES (NULL , "Tiina", 15, "rebane", 1), (NULL , "Juku", 3, "halljänes", 5), 
+(NULL , "Wolfgang", 7, "hunt", 8), (NULL , "Kippie", 9, "rebane", 8), 
+(NULL , "Otto", 16, "ninasarvik", 5), (NULL , "Rex", 22, "hüään", 9);
