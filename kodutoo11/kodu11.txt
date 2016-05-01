@@ -1,4 +1,6 @@
-﻿CREATE TABLE L__loomaaed(
+﻿Tabeli loomine:
+
+CREATE TABLE L__loomaaed(
 id int AUTO_INCREMENT PRIMARY KEY,
 nimi varchar( 100 ) NOT NULL,
 vanus int,
@@ -6,8 +8,23 @@ liik varchar (100),
 puur int
 );
 
+Väljade täitmine:
 
 INSERT INTO `L__loomaaed` ( `id` , `nimi` , `vanus` , `liik` , `puur` )
 VALUES (NULL , "Tiina", 15, "rebane", 1), (NULL , "Juku", 3, "halljänes", 5), 
 (NULL , "Wolfgang", 7, "hunt", 8), (NULL , "Kippie", 9, "rebane", 8), 
 (NULL , "Otto", 16, "ninasarvik", 5), (NULL , "Rex", 22, "hüään", 9);
+
+Päringud:
+
+1) ◦Hankida kõigi mingis ühes kindlas puuris elavate loomade nimi ja puuri number
+    SELECT nimi, puur FROM `L__loomaaed` WHERE puur = 8;
+
+2) ◦Hankida vanima ja noorima looma vanused
+    SELECT MAX(vanus) as vanim_loom, MIN(vanus) as noorim_loom FROM L__loomaaed;
+
+3) ◦Hankida puuri number koos selles elavate loomade arvuga (vihjeks: group by ja count )
+    SELECT puur, COUNT( * ) AS loomi FROM L__loomaaed GROUP BY puur;
+
+4) ◦Suurendada kõiki tabelis olevaid vanuseid 1 aasta võrra
+    UPDATE L__loomaaed SET vanus = vanus +1;
