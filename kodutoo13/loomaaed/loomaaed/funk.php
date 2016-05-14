@@ -28,28 +28,28 @@ function kuva_puurid(){
 }
 
 function logi(){
-	
+
 	//siia on vaja funktsionaalsust (13. nädalal)
 	$errors = array();
     global $connection;
-    
-    /*
+       
     if(isset($_SESSION['user'])){
-	  header("Location: ?page=puurid");
+	  header("Location: ?page=loomad");
     exit(0);
     }
-    */
-    
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	    
 	    if(isset($_POST['user'])&& isset($_POST['pass'])){
-		   $username = mysql_real_escape_string($connection, $_POST['user']);
-           $password = mysql_real_escape_string($connection, $_POST['pass']);
-    $query = mysqli_query($connection, "SELECT username from L__kylastajad WHERE username = $username AND passw = SHA1($password)");
+		   $username = mysqli_real_escape_string($connection, $_POST['user']);
+           $password = mysqli_real_escape_string($connection, $_POST['pass']);
+            $sql = "SELECT username from L__kylastajad WHERE username = '$username' AND passw =  '".sha1($password)."'";
+    $query = mysqli_query($connection, $sql);
     $rownums = mysqli_num_rows($query);
         
 		      if ($rownums > 0){
 			      $_SESSION['user']= $username;
-			      header("Location: ?page=puurid");
+			      header("Location: ?page=loomad");
 			     }else{
 				     $errors[]= "vigane kasutajanimi või parool!";
 			    }
@@ -57,8 +57,7 @@ function logi(){
 		    $errors[]= "täida kõik vormiväljad!";
     }
   
-   
-}
+   }
 	   
 	   include_once('views/login.html');
 }
