@@ -39,27 +39,28 @@ function logi(){
     }
       
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	    
-	    if(isset($_POST['user'])&& isset($_POST['pass'])){
+	         if(empty($_POST['user']) || empty($_POST['pass'])){
+		     $errors[]= "täida kõik vormiväljad!";
+		   		   
+	    }else{
 		   $username = mysqli_real_escape_string($connection, $_POST['user']);
            $password = mysqli_real_escape_string($connection, $_POST['pass']);
-            $sql = "SELECT username from L__kylastajad WHERE username = '$username' AND passw =  '".sha1($password)."'";
-    $query = mysqli_query($connection, $sql);
-    $rownums = mysqli_num_rows($query);
+           $sql = "SELECT username from L__kylastajad WHERE username = '$username' AND passw =  '".sha1($password)."'";
+           $query = mysqli_query($connection, $sql);
+           $rownums = mysqli_num_rows($query);
         
 		      if ($rownums > 0){
 			      $_SESSION['user']= $username;
 			      header("Location: ?page=loomad");
 			     }else{
 				     $errors[]= "vigane kasutajanimi või parool!";
-			    }
-	    }else{
-		    $errors[]= "täida kõik vormiväljad!";
     }
   
+    	 
    }
 	   
-	   include_once('views/login.html');
+}
+  include_once('views/login.html');
 }
 
 function logout(){
@@ -71,7 +72,34 @@ function logout(){
 function lisa(){
 	// siia on vaja funktsionaalsust (13. nädalal)
 	
+	$errors = array();
+	global $connection; 
 	
+	if(empty($_SESSION['user'])){
+		 header("Location: ?page=login");
+         exit(0);
+     }else{
+		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	             if(empty($_POST['nimi'])|| empty($_POST['puur'])|| upload("liik")== ""){
+		              $errors[]= "täida kõik vormiväljad!";
+	             }else{
+		            $name = mysqli_real_escape_string($connection, $_POST['nimi']);
+                    $cage = mysqli_real_escape_string($connection, $_POST['puur']);
+                    $liik = upload("liik");
+                    $species = mysqli_real_escape_string($connection, $liik);
+                    $sql = "INSERT into L__loomaaed2(id, nimi, puur, liik) VALUES (null, '$name', '$cage', '$species')";
+                    $query = mysqli_query($connection, $sql);
+                    
+                   if(mysqli_insert_id($connection)> 0){
+	                   header("Location: ?page=loomad");
+                       exit(0);
+                   }
+		}
+		
+}	
+	 
+  }
+   
 	include_once('views/loomavorm.html');
 	
 }
