@@ -14,6 +14,11 @@ function connect_db(){
 
 function kuva_puurid(){
 	// siia on vaja funktsionaalsust
+	
+	if(empty($_SESSION['user'])){
+		header("Location: ?page=login");
+		exit(0);
+	}else{
 	global $connection;
 	$p= mysqli_query($connection, "select distinct(puur) as puur from L__loomaaed2 order by puur asc");
 	$puurid=array();
@@ -25,8 +30,8 @@ function kuva_puurid(){
 	}
 	include_once('views/puurid.html');
 	
+    }
 }
-
 function logi(){
 
 	//siia on vaja funktsionaalsust (13. nädalal)
@@ -54,12 +59,11 @@ function logi(){
 			      header("Location: ?page=loomad");
 			     }else{
 				     $errors[]= "vigane kasutajanimi või parool!";
-    }
-  
-    	 
-   }
+           }
+      }
 	   
-}
+  }
+  
   include_once('views/login.html');
 }
 
@@ -75,7 +79,7 @@ function lisa(){
 	$errors = array();
 	global $connection; 
 	
-	if(empty($_SESSION['user'])){
+	if(!isset($_SESSION['user'])){
 		 header("Location: ?page=login");
          exit(0);
      }else{
@@ -94,11 +98,10 @@ function lisa(){
 	                   header("Location: ?page=loomad");
                        exit(0);
                    }
-		}
-		
-}	
+		     }
+      }	
 	 
-  }
+   }
    
 	include_once('views/loomavorm.html');
 	
